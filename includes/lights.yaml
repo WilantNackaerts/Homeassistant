@@ -5,3 +5,8 @@
     - light.kitchen_2
     - light.kitchen_3
     - light.kitchen_4
+- platform: group
+  name: Office Lights
+  entities:
+    - light.office_1
+    - light.office_2

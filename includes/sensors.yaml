@@ -5,7 +5,6 @@
     - gft
     - papier
     - pmd
-    - zachteplastic
   postcode: !secret postalcode
   streetname: !secret streetname                
   streetnumber: !secret streetnumber

@@ -5,7 +5,11 @@
   - platform: time
     at: '18:00'
   - platform: time
-    at: '21:00'
+    at: '23:00'
+  - platform: time
+    at: 06:00
+  - platform: time
+    at: 09:00
   condition: []
   action:
   - type: toggle
@@ -47,46 +51,6 @@
     data:
       title: Roomba
       message: Chantall finished cleaning!
-  mode: single
-- id: '1613655082689'
-  alias: 'Frontend: change theme'
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: input_select.theme
-  - platform: state
-    entity_id: input_boolean.dark_mode
-  - platform: state
-    entity_id: input_boolean.theme_alternative
-  - platform: homeassistant
-    event: start
-  condition: []
-  action:
-    service: frontend.set_theme
-    data:
-      name: '{% set which = "dark" if is_state("input_boolean.dark_mode", "on") else
-        "light" -%} {% set name = states("input_select.theme") -%} {% set suffix =
-        "-alternative" if is_state("input_boolean.theme_alternative", "on") else ""
-        -%} ios-{{ which }}-mode-{{ name }}{{ suffix }}
-
-        '
-  mode: single
-- id: '1614243890856'
-  alias: Auto lights
-  description: ''
-  trigger:
-  - platform: zone
-    entity_id: device_tracker.oneplus_nord
-    zone: zone.home
-    event: enter
-  condition:
-  - condition: sun
-    after: sunset
-    before: sunrise
-  action:
-  - condition: state
-    entity_id: light.kitchen_lights
-    state: 'on'
   mode: single
 - id: '1614244821908'
   alias: Roomba stuck

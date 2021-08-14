@@ -122,5 +122,8 @@ appdaemon/compiled
 appdaemon/dashboards/
 home-assistant_v2.db
 tts/
+deps/
 webostv.conf
 themes/ios-*
+home-assistant.log
+home-assistant_v2.db*
